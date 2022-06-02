@@ -56,7 +56,21 @@ body {
     font-family: "Alata", sans-serif;
     font-weight: 400;
     text-decoration: none;
-    color: white; }
+    color: white;
+    position: relative;
+    text-align: center; }
+    .navbar__link::after {
+      content: "";
+      position: absolute;
+      bottom: -1.5rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 3rem;
+      height: 0.2rem;
+      background-color: white;
+      opacity: 0; }
+    .navbar__link:hover::after {
+      opacity: 1; }
 
 .content__display {
   height: 100vh;
@@ -91,3 +105,163 @@ body {
   font-weight: 400;
   font-size: 2rem;
   color: #8c8c8c; }
+
+.content__gallery {
+  padding: 5rem 20rem; }
+
+.content__gallery-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.content__gallery-title {
+  font-size: 10rem;
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300; }
+
+.content__gallery-button {
+  display: inline-block;
+  font-size: 3rem;
+  text-transform: uppercase;
+  padding: 2.5rem 10rem;
+  font-family: "Alata", sans-serif;
+  font-weight: 400;
+  word-spacing: 1rem;
+  letter-spacing: 1rem;
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  border-radius: 0.5rem;
+  outline: none; }
+  .content__gallery-button:hover {
+    color: white;
+    background-color: black; }
+
+.content__gallery-grids {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr); }
+
+.content__gallery-card {
+  height: 70vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  cursor: pointer; }
+  .content__gallery-card--deep-earth {
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url(images/desktop/image-deep-earth.jpg); }
+    .content__gallery-card--deep-earth:hover {
+      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.9)), url(images/desktop/image-deep-earth.jpg); }
+  .content__gallery-card--night-arcade {
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url(images/desktop/image-night-arcade.jpg); }
+    .content__gallery-card--night-arcade:hover {
+      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.9)), url(images/desktop/image-night-arcade.jpg); }
+  .content__gallery-card--soccer-team {
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url(images/desktop/image-soccer-team.jpg); }
+    .content__gallery-card--soccer-team:hover {
+      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.9)), url(images/desktop/image-soccer-team.jpg); }
+  .content__gallery-card--grid {
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url(images/desktop/image-grid.jpg); }
+    .content__gallery-card--grid:hover {
+      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.9)), url(images/desktop/image-grid.jpg); }
+  .content__gallery-card--from-above {
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url(images/desktop/image-from-above.jpg); }
+    .content__gallery-card--from-above:hover {
+      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.9)), url(images/desktop/image-from-above.jpg); }
+  .content__gallery-card--pocket-borealis {
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url(images/desktop/image-pocket-borealis.jpg); }
+    .content__gallery-card--pocket-borealis:hover {
+      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.9)), url(images/desktop/image-pocket-borealis.jpg); }
+  .content__gallery-card--curiosity {
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url(images/desktop/image-curiosity.jpg); }
+    .content__gallery-card--curiosity:hover {
+      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.9)), url(images/desktop/image-curiosity.jpg); }
+  .content__gallery-card--fisheye {
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url(images/desktop/image-fisheye.jpg); }
+    .content__gallery-card--fisheye:hover {
+      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.9)), url(images/desktop/image-fisheye.jpg); }
+
+.content__gallery-card-title {
+  font-size: 5rem;
+  text-transform: uppercase;
+  color: white;
+  position: absolute;
+  bottom: 2rem;
+  left: 5rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300; }
+
+.content__gallery-card:hover .content__gallery-card-title {
+  color: black; }
+
+.footer {
+  width: 100%;
+  height: 25vh;
+  background-color: black; }
+  .footer__top-box {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .footer__bottom-box {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .footer__bottom-box .navbar {
+      width: 30%;
+      padding: 0; }
+    .footer__bottom-box .navbar__list {
+      justify-content: left;
+      padding: 0; }
+    .footer__bottom-box .navbar__link {
+      font-size: 2rem;
+      font-family: "Josefin Sans", sans-serif;
+      font-weight: 300; }
+  .footer__social {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem; }
+  .footer__copyright-box {
+    text-align: center;
+    width: 20%; }
+  .footer__copyright {
+    color: dimgray;
+    font-size: 1.6rem;
+    font-family: "Alata", sans-serif;
+    font-weight: 400; }
+
+.icon {
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  cursor: pointer;
+  text-align: center; }
+  .icon::after {
+    content: "";
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3rem;
+    height: 0.2rem;
+    background-color: white;
+    opacity: 0; }
+  .icon:hover::after {
+    opacity: 1; }
+  .icon--facebook {
+    background-image: url(images/icon-facebook.svg); }
+  .icon--twitter {
+    background-image: url(images/icon-twitter.svg); }
+  .icon--pinterest {
+    background-image: url(images/icon-pinterest.svg); }
+  .icon--instagram {
+    background-image: url(images/icon-instagram.svg); }

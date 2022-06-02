@@ -117,6 +117,23 @@ body {
     @include font-type(Alata);
     text-decoration: none;
     color: $clr-primary-1;
+    position: relative;
+    text-align: center;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1.5rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 3rem;
+      height: 0.2rem;
+      background-color: $clr-primary-1;
+      opacity: 0;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
   }
 }
 
@@ -152,9 +169,312 @@ body {
     text-transform: uppercase;
     margin: 0;
   }
+
   &__display-description {
     @include font-type(Alata);
     font-size: 2rem;
     color: $clr-primary-3;
+  }
+
+  &__gallery {
+    padding: 5rem 20rem;
+  }
+
+  &__gallery-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__gallery-title {
+    font-size: 10rem;
+    text-transform: uppercase;
+    @include font-type(Josefin);
+  }
+
+  &__gallery-button {
+    display: inline-block;
+
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding: 2.5rem 10rem;
+    @include font-type(Alata);
+    word-spacing: 1rem;
+    letter-spacing: 1rem;
+    cursor: pointer;
+
+    color: $clr-primary-2;
+    background-color: $clr-primary-1;
+    border-radius: 0.5rem;
+    outline: none;
+    // border: none;
+
+    &:hover {
+      color: $clr-primary-1;
+      background-color: $clr-primary-2;
+    }
+  }
+
+  &__gallery-grids {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__gallery-card {
+    height: 70vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    cursor: pointer;
+
+    &--deep-earth {
+      background-image: linear-gradient(
+          to bottom,
+          transparent,
+          rgba($clr-primary-2, 0.3)
+        ),
+        url(images/desktop/image-deep-earth.jpg);
+
+      &:hover {
+        background-image: linear-gradient(
+            to bottom,
+            transparent,
+            rgba($clr-primary-3, 0.9)
+          ),
+          url(images/desktop/image-deep-earth.jpg);
+      }
+    }
+
+    &--night-arcade {
+      background-image: linear-gradient(
+          to bottom,
+          transparent,
+          rgba($clr-primary-2, 0.3)
+        ),
+        url(images/desktop/image-night-arcade.jpg);
+
+      &:hover {
+        background-image: linear-gradient(
+            to bottom,
+            transparent,
+            rgba($clr-primary-3, 0.9)
+          ),
+          url(images/desktop/image-night-arcade.jpg);
+      }
+    }
+    &--soccer-team {
+      background-image: linear-gradient(
+          to bottom,
+          transparent,
+          rgba($clr-primary-2, 0.3)
+        ),
+        url(images/desktop/image-soccer-team.jpg);
+
+      &:hover {
+        background-image: linear-gradient(
+            to bottom,
+            transparent,
+            rgba($clr-primary-3, 0.9)
+          ),
+          url(images/desktop/image-soccer-team.jpg);
+      }
+    }
+    &--grid {
+      background-image: linear-gradient(
+          to bottom,
+          transparent,
+          rgba($clr-primary-2, 0.3)
+        ),
+        url(images/desktop/image-grid.jpg);
+
+      &:hover {
+        background-image: linear-gradient(
+            to bottom,
+            transparent,
+            rgba($clr-primary-3, 0.9)
+          ),
+          url(images/desktop/image-grid.jpg);
+      }
+    }
+    &--from-above {
+      background-image: linear-gradient(
+          to bottom,
+          transparent,
+          rgba($clr-primary-2, 0.3)
+        ),
+        url(images/desktop/image-from-above.jpg);
+
+      &:hover {
+        background-image: linear-gradient(
+            to bottom,
+            transparent,
+            rgba($clr-primary-3, 0.9)
+          ),
+          url(images/desktop/image-from-above.jpg);
+      }
+    }
+    &--pocket-borealis {
+      background-image: linear-gradient(
+          to bottom,
+          transparent,
+          rgba($clr-primary-2, 0.3)
+        ),
+        url(images/desktop/image-pocket-borealis.jpg);
+
+      &:hover {
+        background-image: linear-gradient(
+            to bottom,
+            transparent,
+            rgba($clr-primary-3, 0.9)
+          ),
+          url(images/desktop/image-pocket-borealis.jpg);
+      }
+    }
+    &--curiosity {
+      background-image: linear-gradient(
+          to bottom,
+          transparent,
+          rgba($clr-primary-2, 0.3)
+        ),
+        url(images/desktop/image-curiosity.jpg);
+
+      &:hover {
+        background-image: linear-gradient(
+            to bottom,
+            transparent,
+            rgba($clr-primary-3, 0.9)
+          ),
+          url(images/desktop/image-curiosity.jpg);
+      }
+    }
+    &--fisheye {
+      background-image: linear-gradient(
+          to bottom,
+          transparent,
+          rgba($clr-primary-2, 0.3)
+        ),
+        url(images/desktop/image-fisheye.jpg);
+
+      &:hover {
+        background-image: linear-gradient(
+            to bottom,
+            transparent,
+            rgba($clr-primary-3, 0.9)
+          ),
+          url(images/desktop/image-fisheye.jpg);
+      }
+    }
+  }
+
+  &__gallery-card-title {
+    font-size: 5rem;
+    text-transform: uppercase;
+    color: white;
+    position: absolute;
+    bottom: 2rem;
+    left: 5rem;
+    @include font-type(Josefin);
+  }
+
+  &__gallery-card:hover &__gallery-card-title {
+    color: $clr-primary-2;
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 25vh;
+  background-color: $clr-primary-2;
+
+  &__top-box {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__bottom-box {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & .navbar {
+      width: 30%;
+      padding: 0;
+    }
+    & .navbar__list {
+      justify-content: left;
+      padding: 0;
+    }
+
+    & .navbar__link {
+      font-size: 2rem;
+      @include font-type(Josefin);
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  &__copyright-box {
+    text-align: center;
+    width: 20%;
+  }
+
+  &__copyright {
+    color: $clr-primary-4;
+    font-size: 1.6rem;
+    @include font-type(Alata);
+  }
+}
+
+.icon {
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3rem;
+    height: 0.2rem;
+    background-color: $clr-primary-1;
+    opacity: 0;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &--facebook {
+    background-image: url(images/icon-facebook.svg);
+  }
+
+  &--twitter {
+    background-image: url(images/icon-twitter.svg);
+  }
+
+  &--pinterest {
+    background-image: url(images/icon-pinterest.svg);
+  }
+
+  &--instagram {
+    background-image: url(images/icon-instagram.svg);
   }
 }
