@@ -50,6 +50,53 @@ $default-font-size: 1.5rem;
   }
 }
 
+@mixin bg-image($name, $device) {
+  $url: "images/#{$device}/image-#{$name}.jpg";
+  $animation-name: unique-id() !global;
+
+  background-image: url($url);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(
+      to bottom,
+      transparent,
+      rgba($clr-primary-2, 0.1)
+    );
+    transition: all 0.3s ease;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(
+      to bottom,
+      transparent,
+      rgba($clr-primary-3, 0.6)
+    );
+    transition: all 0.8s ease;
+    opacity: 0;
+  }
+
+  &:hover::after {
+    opacity: 0;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
 html,
 body {
   margin: 0;
@@ -119,20 +166,23 @@ body {
     color: $clr-primary-1;
     position: relative;
     text-align: center;
+
     &::after {
       content: "";
       position: absolute;
       bottom: -1.5rem;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 3rem;
+      width: 0;
       height: 0.2rem;
       background-color: $clr-primary-1;
       opacity: 0;
+      transition: all 0.3s ease-in-out;
     }
 
     &:hover::after {
       opacity: 1;
+      width: 3rem;
     }
   }
 }
@@ -208,6 +258,7 @@ body {
     border-radius: 0.5rem;
     outline: none;
     // border: none;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
       color: $clr-primary-1;
@@ -229,141 +280,29 @@ body {
     cursor: pointer;
 
     &--deep-earth {
-      background-image: linear-gradient(
-          to bottom,
-          transparent,
-          rgba($clr-primary-2, 0.3)
-        ),
-        url(images/desktop/image-deep-earth.jpg);
-
-      &:hover {
-        background-image: linear-gradient(
-            to bottom,
-            transparent,
-            rgba($clr-primary-3, 0.9)
-          ),
-          url(images/desktop/image-deep-earth.jpg);
-      }
+      @include bg-image(deep-earth, desktop);
     }
 
     &--night-arcade {
-      background-image: linear-gradient(
-          to bottom,
-          transparent,
-          rgba($clr-primary-2, 0.3)
-        ),
-        url(images/desktop/image-night-arcade.jpg);
-
-      &:hover {
-        background-image: linear-gradient(
-            to bottom,
-            transparent,
-            rgba($clr-primary-3, 0.9)
-          ),
-          url(images/desktop/image-night-arcade.jpg);
-      }
+      @include bg-image(night-arcade, desktop);
     }
     &--soccer-team {
-      background-image: linear-gradient(
-          to bottom,
-          transparent,
-          rgba($clr-primary-2, 0.3)
-        ),
-        url(images/desktop/image-soccer-team.jpg);
-
-      &:hover {
-        background-image: linear-gradient(
-            to bottom,
-            transparent,
-            rgba($clr-primary-3, 0.9)
-          ),
-          url(images/desktop/image-soccer-team.jpg);
-      }
+      @include bg-image(soccer-team, desktop);
     }
     &--grid {
-      background-image: linear-gradient(
-          to bottom,
-          transparent,
-          rgba($clr-primary-2, 0.3)
-        ),
-        url(images/desktop/image-grid.jpg);
-
-      &:hover {
-        background-image: linear-gradient(
-            to bottom,
-            transparent,
-            rgba($clr-primary-3, 0.9)
-          ),
-          url(images/desktop/image-grid.jpg);
-      }
+      @include bg-image(grid, desktop);
     }
     &--from-above {
-      background-image: linear-gradient(
-          to bottom,
-          transparent,
-          rgba($clr-primary-2, 0.3)
-        ),
-        url(images/desktop/image-from-above.jpg);
-
-      &:hover {
-        background-image: linear-gradient(
-            to bottom,
-            transparent,
-            rgba($clr-primary-3, 0.9)
-          ),
-          url(images/desktop/image-from-above.jpg);
-      }
+      @include bg-image(from-above, desktop);
     }
     &--pocket-borealis {
-      background-image: linear-gradient(
-          to bottom,
-          transparent,
-          rgba($clr-primary-2, 0.3)
-        ),
-        url(images/desktop/image-pocket-borealis.jpg);
-
-      &:hover {
-        background-image: linear-gradient(
-            to bottom,
-            transparent,
-            rgba($clr-primary-3, 0.9)
-          ),
-          url(images/desktop/image-pocket-borealis.jpg);
-      }
+      @include bg-image(pocket-borealis, desktop);
     }
     &--curiosity {
-      background-image: linear-gradient(
-          to bottom,
-          transparent,
-          rgba($clr-primary-2, 0.3)
-        ),
-        url(images/desktop/image-curiosity.jpg);
-
-      &:hover {
-        background-image: linear-gradient(
-            to bottom,
-            transparent,
-            rgba($clr-primary-3, 0.9)
-          ),
-          url(images/desktop/image-curiosity.jpg);
-      }
+      @include bg-image(curiosity, desktop);
     }
     &--fisheye {
-      background-image: linear-gradient(
-          to bottom,
-          transparent,
-          rgba($clr-primary-2, 0.3)
-        ),
-        url(images/desktop/image-fisheye.jpg);
-
-      &:hover {
-        background-image: linear-gradient(
-            to bottom,
-            transparent,
-            rgba($clr-primary-3, 0.9)
-          ),
-          url(images/desktop/image-fisheye.jpg);
-      }
+      @include bg-image(fisheye, desktop);
     }
   }
 
@@ -375,6 +314,8 @@ body {
     bottom: 2rem;
     left: 5rem;
     @include font-type(Josefin);
+
+    transition: all 0.5s ease-in-out;
   }
 
   &__gallery-card:hover &__gallery-card-title {
@@ -456,6 +397,7 @@ body {
     height: 0.2rem;
     background-color: $clr-primary-1;
     opacity: 0;
+    transition: all 0.5s ease-in-out;
   }
 
   &:hover::after {

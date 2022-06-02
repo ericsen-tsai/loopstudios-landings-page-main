@@ -65,12 +65,14 @@ body {
       bottom: -1.5rem;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 3rem;
+      width: 0;
       height: 0.2rem;
       background-color: white;
-      opacity: 0; }
+      opacity: 0;
+      transition: all 0.3s ease-in-out; }
     .navbar__link:hover::after {
-      opacity: 1; }
+      opacity: 1;
+      width: 3rem; }
 
 .content__display {
   height: 100vh;
@@ -133,7 +135,8 @@ body {
   color: black;
   background-color: white;
   border-radius: 0.5rem;
-  outline: none; }
+  outline: none;
+  transition: all 0.3s ease-in-out; }
   .content__gallery-button:hover {
     color: white;
     background-color: black; }
@@ -150,37 +153,213 @@ body {
   position: relative;
   cursor: pointer; }
   .content__gallery-card--deep-earth {
-    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url(images/desktop/image-deep-earth.jpg); }
-    .content__gallery-card--deep-earth:hover {
-      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.9)), url(images/desktop/image-deep-earth.jpg); }
+    background-image: url("images/desktop/image-deep-earth.jpg");
+    position: relative; }
+    .content__gallery-card--deep-earth::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+      transition: all 0.3s ease; }
+    .content__gallery-card--deep-earth::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.6));
+      transition: all 0.8s ease;
+      opacity: 0; }
+    .content__gallery-card--deep-earth:hover::after {
+      opacity: 0; }
+    .content__gallery-card--deep-earth:hover::before {
+      opacity: 1; }
   .content__gallery-card--night-arcade {
-    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url(images/desktop/image-night-arcade.jpg); }
-    .content__gallery-card--night-arcade:hover {
-      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.9)), url(images/desktop/image-night-arcade.jpg); }
+    background-image: url("images/desktop/image-night-arcade.jpg");
+    position: relative; }
+    .content__gallery-card--night-arcade::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+      transition: all 0.3s ease; }
+    .content__gallery-card--night-arcade::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.6));
+      transition: all 0.8s ease;
+      opacity: 0; }
+    .content__gallery-card--night-arcade:hover::after {
+      opacity: 0; }
+    .content__gallery-card--night-arcade:hover::before {
+      opacity: 1; }
   .content__gallery-card--soccer-team {
-    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url(images/desktop/image-soccer-team.jpg); }
-    .content__gallery-card--soccer-team:hover {
-      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.9)), url(images/desktop/image-soccer-team.jpg); }
+    background-image: url("images/desktop/image-soccer-team.jpg");
+    position: relative; }
+    .content__gallery-card--soccer-team::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+      transition: all 0.3s ease; }
+    .content__gallery-card--soccer-team::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.6));
+      transition: all 0.8s ease;
+      opacity: 0; }
+    .content__gallery-card--soccer-team:hover::after {
+      opacity: 0; }
+    .content__gallery-card--soccer-team:hover::before {
+      opacity: 1; }
   .content__gallery-card--grid {
-    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url(images/desktop/image-grid.jpg); }
-    .content__gallery-card--grid:hover {
-      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.9)), url(images/desktop/image-grid.jpg); }
+    background-image: url("images/desktop/image-grid.jpg");
+    position: relative; }
+    .content__gallery-card--grid::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+      transition: all 0.3s ease; }
+    .content__gallery-card--grid::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.6));
+      transition: all 0.8s ease;
+      opacity: 0; }
+    .content__gallery-card--grid:hover::after {
+      opacity: 0; }
+    .content__gallery-card--grid:hover::before {
+      opacity: 1; }
   .content__gallery-card--from-above {
-    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url(images/desktop/image-from-above.jpg); }
-    .content__gallery-card--from-above:hover {
-      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.9)), url(images/desktop/image-from-above.jpg); }
+    background-image: url("images/desktop/image-from-above.jpg");
+    position: relative; }
+    .content__gallery-card--from-above::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+      transition: all 0.3s ease; }
+    .content__gallery-card--from-above::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.6));
+      transition: all 0.8s ease;
+      opacity: 0; }
+    .content__gallery-card--from-above:hover::after {
+      opacity: 0; }
+    .content__gallery-card--from-above:hover::before {
+      opacity: 1; }
   .content__gallery-card--pocket-borealis {
-    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url(images/desktop/image-pocket-borealis.jpg); }
-    .content__gallery-card--pocket-borealis:hover {
-      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.9)), url(images/desktop/image-pocket-borealis.jpg); }
+    background-image: url("images/desktop/image-pocket-borealis.jpg");
+    position: relative; }
+    .content__gallery-card--pocket-borealis::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+      transition: all 0.3s ease; }
+    .content__gallery-card--pocket-borealis::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.6));
+      transition: all 0.8s ease;
+      opacity: 0; }
+    .content__gallery-card--pocket-borealis:hover::after {
+      opacity: 0; }
+    .content__gallery-card--pocket-borealis:hover::before {
+      opacity: 1; }
   .content__gallery-card--curiosity {
-    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url(images/desktop/image-curiosity.jpg); }
-    .content__gallery-card--curiosity:hover {
-      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.9)), url(images/desktop/image-curiosity.jpg); }
+    background-image: url("images/desktop/image-curiosity.jpg");
+    position: relative; }
+    .content__gallery-card--curiosity::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+      transition: all 0.3s ease; }
+    .content__gallery-card--curiosity::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.6));
+      transition: all 0.8s ease;
+      opacity: 0; }
+    .content__gallery-card--curiosity:hover::after {
+      opacity: 0; }
+    .content__gallery-card--curiosity:hover::before {
+      opacity: 1; }
   .content__gallery-card--fisheye {
-    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url(images/desktop/image-fisheye.jpg); }
-    .content__gallery-card--fisheye:hover {
-      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.9)), url(images/desktop/image-fisheye.jpg); }
+    background-image: url("images/desktop/image-fisheye.jpg");
+    position: relative; }
+    .content__gallery-card--fisheye::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+      transition: all 0.3s ease; }
+    .content__gallery-card--fisheye::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, transparent, rgba(140, 140, 140, 0.6));
+      transition: all 0.8s ease;
+      opacity: 0; }
+    .content__gallery-card--fisheye:hover::after {
+      opacity: 0; }
+    .content__gallery-card--fisheye:hover::before {
+      opacity: 1; }
 
 .content__gallery-card-title {
   font-size: 5rem;
@@ -190,7 +369,8 @@ body {
   bottom: 2rem;
   left: 5rem;
   font-family: "Josefin Sans", sans-serif;
-  font-weight: 300; }
+  font-weight: 300;
+  transition: all 0.5s ease-in-out; }
 
 .content__gallery-card:hover .content__gallery-card-title {
   color: black; }
@@ -254,7 +434,8 @@ body {
     width: 3rem;
     height: 0.2rem;
     background-color: white;
-    opacity: 0; }
+    opacity: 0;
+    transition: all 0.5s ease-in-out; }
   .icon:hover::after {
     opacity: 1; }
   .icon--facebook {
