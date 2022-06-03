@@ -1,15 +1,17 @@
 {
   "name": "loopstudios-landing-page-main",
   "version": "1.0.0",
-  "description": "![Design preview for the Loopstudios landing page coding challenge](./design/desktop-preview.jpg)",
+  "description": "Loops Studios Landing Page!!",
   "main": "index.js",
   "scripts": {
+    "start": "serve",
     "compile:sass": "node-sass style.scss style.css -w"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ericsen Tsai",
   "license": "ISC",
   "dependencies": {
-    "node-sass": "^7.0.1"
+    "node-sass": "^7.0.1",
+    "serve": "^13.0.2"
   }
 }

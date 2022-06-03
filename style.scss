@@ -111,6 +111,8 @@ body {
   width: 100%;
   height: 100%;
   font-size: 62.5%;
+  position: relative;
+
   @include font-type(Josefin);
 
   @include respond(tab-land) {
@@ -166,14 +168,17 @@ body {
     }
   }
 
-  & .navbar__list {
+  & .navbar {
     @include respond(phone) {
       display: none;
     }
   }
 
-  & .navbar {
+  &__hamburger {
+    display: none;
+
     @include respond(phone) {
+      display: inline-block;
       width: 10rem;
       height: 8rem;
       background-image: url(images/icon-hamburger.svg);
@@ -350,7 +355,7 @@ body {
     padding: 5rem 20rem;
 
     @include respond(phone) {
-      padding-bottom: 40rem;
+      padding-bottom: 50rem;
     }
   }
 
@@ -412,10 +417,9 @@ body {
       // display: block;
       text-align: center;
       // margin: 0 auto;
-      bottom: -420rem;
+      bottom: -430rem;
       left: 50%;
       transform: translate(-50%, -50%);
-      z-index: 10000;
     }
   }
 
@@ -689,9 +693,74 @@ body {
   }
 }
 
+.mobile {
+  position: fixed;
+  top: 0;
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: $clr-primary-2;
+  overflow: hidden;
+
+  &__flex-box {
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo-box {
+    padding-top: 3rem;
+  }
+
+  &__logo {
+    width: 60rem;
+  }
+
+  &__close {
+    display: inline-block;
+    width: 8rem;
+    height: 8rem;
+    background-image: url(images/icon-close.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  & .navbar {
+    animation: none;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(0, -50%);
+
+    &__list {
+      padding: 0;
+      align-items: flex-start;
+    }
+
+    &__link {
+      font-size: 10rem;
+      text-transform: uppercase;
+
+      @include font-type(Josefin);
+    }
+  }
+
+  &--animated-open {
+    animation: open 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+    animation-fill-mode: backwards;
+  }
+
+  &--animated-close {
+    right: -60rem;
+    animation: close 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+    animation-fill-mode: backwards;
+  }
+}
+
 @keyframes left-to-right {
   from {
-    transform: translateX(-30rem);
+    transform: translateX(-60rem);
     opacity: 0;
   }
 
@@ -733,6 +802,30 @@ body {
 
   to {
     transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+
+@keyframes close {
+  from {
+    transform: translateX(-60rem);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(0rem);
+    opacity: 0;
+  }
+}
+
+@keyframes open {
+  from {
+    transform: translateX(60rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0rem);
     opacity: 1;
   }
 }

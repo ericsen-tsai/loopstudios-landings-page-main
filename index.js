@@ -36,3 +36,27 @@ const galleryObserver = new IntersectionObserver((entries) => {
 
 displayObserver.observe(document.querySelector(".content__display"))
 galleryObserver.observe(document.querySelector(".content__gallery"))
+
+const mobileNav = document.querySelector(".mobile")
+const openNav = document.querySelector(".hero__hamburger")
+const closeNav = document.querySelector(".mobile__close")
+
+openNav.addEventListener("click", () => {
+  mobileNav.style.display = "inline-block"
+  mobileNav.classList.add("mobile--animated-open")
+  document.body.style.overflow = "hidden"
+})
+
+closeNav.addEventListener("click", () => {
+  mobileNav.classList.add("mobile--animated-close")
+  mobileNav.addEventListener(
+    "animationend",
+    () => {
+      mobileNav.style.display = "none"
+      mobileNav.classList.remove("mobile--animated-open")
+      mobileNav.classList.remove("mobile--animated-close")
+      document.body.style.overflow = "scroll"
+    },
+    { once: true }
+  )
+})
