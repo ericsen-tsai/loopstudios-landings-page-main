@@ -57,6 +57,14 @@ $default-font-size: 1.5rem;
   background-image: url($url);
   position: relative;
 
+  @include respond(tab-land) {
+    background-position: -5rem 0;
+  }
+
+  @include respond(tab-port) {
+    background-position: -10rem 0;
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -104,6 +112,18 @@ body {
   height: 100%;
   font-size: 62.5%;
   @include font-type(Josefin);
+
+  @include respond(tab-land) {
+    font-size: 45%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 36%;
+  }
+
+  @include respond(phone) {
+    font-size: 24%;
+  }
 }
 
 .hero {
@@ -111,6 +131,10 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   height: 105vh;
+
+  @include respond(tab-port) {
+    background-image: url(images/mobile/image-hero.jpg);
+  }
 
   &__head-box {
     padding: 10rem;
@@ -127,33 +151,74 @@ body {
     padding: 1rem;
     animation: left-to-right 2.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     animation-fill-mode: backwards;
+
+    @include respond(phone) {
+      padding-top: 3rem;
+    }
   }
 
   &__logo {
     width: 30rem;
     height: auto;
+
+    @include respond(phone) {
+      width: 80rem;
+    }
+  }
+
+  & .navbar__list {
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  & .navbar {
+    @include respond(phone) {
+      width: 10rem;
+      height: 8rem;
+      background-image: url(images/icon-hamburger.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
 
   &__text-box {
-    width: 50%;
+    // width: 50%;
+    display: inline-block;
     padding: 0 5rem;
-    margin: 20rem 0;
+    margin: 10% 0;
     border: 0.5rem solid $clr-primary-1;
     animation: right-to-left 2s cubic-bezier(0.215, 0.61, 0.355, 1) 1.2s;
     animation-fill-mode: backwards;
+
+    @include respond(tab-land) {
+      padding: 0 3rem;
+      margin: 30% 0;
+    }
+
+    @include respond(tab-port) {
+      padding: 0 3rem;
+      margin: 50% 0;
+    }
+
+    @include respond(phone) {
+      display: block;
+    }
   }
 
   &__text {
-    font-size: 10rem;
+    font-size: 8rem;
     @include font-type(Josefin);
     text-transform: uppercase;
     color: $clr-primary-1;
+
+    @include respond(phone) {
+      font-size: 16rem;
+    }
   }
 }
 
 .navbar {
-  width: 35%;
-
   animation: top-to-bottom 2.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
   animation-fill-mode: backwards;
 
@@ -163,6 +228,11 @@ body {
     justify-content: space-around;
     align-items: center;
     gap: 3rem;
+
+    @include respond(phone) {
+      flex-direction: column;
+      gap: 8rem;
+    }
   }
 
   &__item {
@@ -203,26 +273,38 @@ body {
     position: relative;
     display: flex;
     align-items: center;
+
+    @include respond(phone) {
+      display: block;
+      height: auto;
+    }
   }
 
   &__display-image-box {
-    padding-left: 20rem;
+    padding-left: 10%;
+    width: 60%;
 
     &--animated {
       animation: left-to-right 1.5s ease-in-out 0.2s;
       animation-fill-mode: backwards;
     }
+
+    @include respond(phone) {
+      width: 80%;
+      padding: 30rem 3rem 5rem 3rem;
+      margin: 0 auto;
+    }
   }
 
   &__display-image {
-    width: 100rem;
+    width: 100%;
   }
 
   &__display-text-box {
     width: 30%;
     position: absolute;
     bottom: 5rem;
-    right: 12rem;
+    right: 12%;
     background-color: $clr-primary-1;
     padding: 12rem 0 0 15rem;
 
@@ -230,23 +312,46 @@ body {
       animation: right-to-left 1.5s ease-in-out 0s;
       animation-fill-mode: backwards;
     }
+
+    @include respond(phone) {
+      position: relative;
+      width: 80%;
+      margin: 0 auto;
+      display: block;
+      bottom: 0;
+      right: 0;
+      padding: 10rem 3rem;
+      text-align: center;
+    }
   }
 
   &__display-title {
     @include font-type(Josefin);
-    font-size: 6rem;
+    font-size: 5rem;
     text-transform: uppercase;
     margin: 0;
+
+    @include respond(phone) {
+      font-size: 14rem;
+    }
   }
 
   &__display-description {
     @include font-type(Alata);
     font-size: 2rem;
     color: $clr-primary-3;
+
+    @include respond(phone) {
+      font-size: 6rem;
+    }
   }
 
   &__gallery {
     padding: 5rem 20rem;
+
+    @include respond(phone) {
+      padding-bottom: 40rem;
+    }
   }
 
   &__gallery-heading {
@@ -258,20 +363,31 @@ body {
       animation: left-to-right 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
       animation-fill-mode: backwards;
     }
+
+    @include respond(phone) {
+      display: block;
+      margin: 0 auto;
+      position: relative;
+    }
   }
 
   &__gallery-title {
-    font-size: 10rem;
+    font-size: 6rem;
     text-transform: uppercase;
     @include font-type(Josefin);
+
+    @include respond(phone) {
+      text-align: center;
+      font-size: 10rem;
+    }
   }
 
   &__gallery-button {
     display: inline-block;
 
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
-    padding: 2.5rem 10rem;
+    padding: 1rem 6rem;
     @include font-type(Alata);
     word-spacing: 1rem;
     letter-spacing: 1rem;
@@ -288,6 +404,19 @@ body {
       color: $clr-primary-1;
       background-color: $clr-primary-2;
     }
+
+    @include respond(phone) {
+      font-size: 4.5rem;
+      position: absolute;
+      padding: 3.5rem 14rem;
+      // display: block;
+      text-align: center;
+      // margin: 0 auto;
+      bottom: -420rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10000;
+    }
   }
 
   &__gallery-grids {
@@ -298,6 +427,10 @@ body {
     &--animated {
       animation: bottom-to-top 2s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
       animation-fill-mode: backwards;
+    }
+
+    @include respond(phone) {
+      grid-template-columns: 1fr;
     }
   }
 
@@ -310,33 +443,73 @@ body {
 
     &--deep-earth {
       @include bg-image(deep-earth, desktop);
+      @include respond(phone) {
+        @include bg-image(deep-earth, mobile);
+        height: 22.5vh;
+        background-size: cover;
+      }
     }
 
     &--night-arcade {
       @include bg-image(night-arcade, desktop);
+      @include respond(phone) {
+        @include bg-image(night-arcade, mobile);
+        height: 22.5vh;
+        background-size: cover;
+      }
     }
     &--soccer-team {
       @include bg-image(soccer-team, desktop);
+      @include respond(phone) {
+        @include bg-image(soccer-team, mobile);
+        height: 22.5vh;
+        background-size: cover;
+      }
     }
     &--grid {
       @include bg-image(grid, desktop);
+      @include respond(phone) {
+        @include bg-image(grid, mobile);
+        height: 22.5vh;
+        background-size: cover;
+      }
     }
     &--from-above {
       @include bg-image(from-above, desktop);
+      @include respond(phone) {
+        @include bg-image(from-above, mobile);
+        height: 22.5vh;
+        background-size: cover;
+      }
     }
     &--pocket-borealis {
       @include bg-image(pocket-borealis, desktop);
+      @include respond(phone) {
+        @include bg-image(pocket-borealis, mobile);
+        height: 22.5vh;
+        background-size: cover;
+      }
     }
     &--curiosity {
       @include bg-image(curiosity, desktop);
+      @include respond(phone) {
+        @include bg-image(curiosity, mobile);
+        height: 22.5vh;
+        background-size: cover;
+      }
     }
     &--fisheye {
       @include bg-image(fisheye, desktop);
+      @include respond(phone) {
+        @include bg-image(fisheye, mobile);
+        height: 22.5vh;
+        background-size: cover;
+      }
     }
   }
 
   &__gallery-card-title {
-    font-size: 5rem;
+    font-size: 3.5rem;
     text-transform: uppercase;
     color: white;
     position: absolute;
@@ -345,6 +518,20 @@ body {
     @include font-type(Josefin);
 
     transition: all 0.5s ease-in-out;
+
+    @include respond(tab-land) {
+      left: 4rem;
+    }
+
+    @include respond(tab-port) {
+      left: 3rem;
+    }
+
+    @include respond(phone) {
+      font-size: 8rem;
+      bottom: -8rem;
+      left: 6rem;
+    }
   }
 
   &__gallery-card:hover &__gallery-card-title {
@@ -357,6 +544,11 @@ body {
   height: 25vh;
   background-color: $clr-primary-2;
 
+  @include respond(phone) {
+    height: 80vh;
+    position: relative;
+  }
+
   &__top-box {
     padding-top: 5rem;
     padding-bottom: 2rem;
@@ -365,6 +557,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include respond(phone) {
+      flex-direction: column;
+      gap: 45vh;
+    }
+  }
+
+  &__logo-box {
+    @include respond(phone) {
+      padding: 8rem 0;
+    }
   }
 
   &__bottom-box {
@@ -373,18 +576,42 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include respond(phone) {
+      flex-direction: column;
+      position: absolute;
+      gap: 12vh;
+      left: 50%;
+      top: 43vh;
+      transform: translate(-50%, -50%);
+    }
+
     & .navbar {
       width: 30%;
       padding: 0;
+
+      @include respond(phone) {
+        width: auto;
+      }
     }
+
     & .navbar__list {
       justify-content: left;
       padding: 0;
+
+      @include respond(phone) {
+        justify-content: center;
+      }
     }
 
     & .navbar__link {
       font-size: 2rem;
       @include font-type(Josefin);
+
+      @include respond(phone) {
+        font-size: 6rem;
+        @include font-type(Alata);
+      }
     }
   }
 
@@ -392,17 +619,23 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+    @include respond(phone) {
+      gap: 4rem;
+    }
   }
 
   &__copyright-box {
-    text-align: center;
-    width: 20%;
+    text-align: right;
   }
 
   &__copyright {
     color: $clr-primary-4;
     font-size: 1.6rem;
     @include font-type(Alata);
+
+    @include respond(phone) {
+      font-size: 5rem;
+    }
   }
 }
 
@@ -448,6 +681,11 @@ body {
 
   &--instagram {
     background-image: url(images/icon-instagram.svg);
+  }
+
+  @include respond(phone) {
+    height: 8rem;
+    width: 8rem;
   }
 }
 
