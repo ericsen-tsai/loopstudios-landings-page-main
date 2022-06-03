@@ -110,7 +110,7 @@ body {
   background-image: url(images/desktop/image-hero.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 105vh;
 
   &__head-box {
     padding: 10rem;
@@ -125,7 +125,10 @@ body {
 
   &__logo-box {
     padding: 1rem;
+    animation: left-to-right 2.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-fill-mode: backwards;
   }
+
   &__logo {
     width: 30rem;
     height: auto;
@@ -136,6 +139,8 @@ body {
     padding: 0 5rem;
     margin: 20rem 0;
     border: 0.5rem solid $clr-primary-1;
+    animation: right-to-left 2s cubic-bezier(0.215, 0.61, 0.355, 1) 1.2s;
+    animation-fill-mode: backwards;
   }
 
   &__text {
@@ -147,7 +152,11 @@ body {
 }
 
 .navbar {
-  width: 30%;
+  width: 35%;
+
+  animation: top-to-bottom 2.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+  animation-fill-mode: backwards;
+
   &__list {
     list-style: none;
     display: flex;
@@ -198,6 +207,11 @@ body {
 
   &__display-image-box {
     padding-left: 20rem;
+
+    &--animated {
+      animation: left-to-right 1.5s ease-in-out 0.2s;
+      animation-fill-mode: backwards;
+    }
   }
 
   &__display-image {
@@ -211,6 +225,11 @@ body {
     right: 12rem;
     background-color: $clr-primary-1;
     padding: 12rem 0 0 15rem;
+
+    &--animated {
+      animation: right-to-left 1.5s ease-in-out 0s;
+      animation-fill-mode: backwards;
+    }
   }
 
   &__display-title {
@@ -234,6 +253,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &--animated {
+      animation: left-to-right 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+      animation-fill-mode: backwards;
+    }
   }
 
   &__gallery-title {
@@ -270,6 +294,11 @@ body {
     display: grid;
     gap: 1.5rem;
     grid-template-columns: repeat(4, 1fr);
+
+    &--animated {
+      animation: bottom-to-top 2s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+      animation-fill-mode: backwards;
+    }
   }
 
   &__gallery-card {
@@ -393,15 +422,16 @@ body {
     bottom: -1.5rem;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 3rem;
+    width: 0;
     height: 0.2rem;
     background-color: $clr-primary-1;
     opacity: 0;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 
   &:hover::after {
     opacity: 1;
+    width: 3rem;
   }
 
   &--facebook {
@@ -418,5 +448,53 @@ body {
 
   &--instagram {
     background-image: url(images/icon-instagram.svg);
+  }
+}
+
+@keyframes left-to-right {
+  from {
+    transform: translateX(-30rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0rem);
+    opacity: 1;
+  }
+}
+
+@keyframes right-to-left {
+  from {
+    transform: translateX(60rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0rem);
+    opacity: 1;
+  }
+}
+
+@keyframes top-to-bottom {
+  from {
+    transform: translateY(-30rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+
+@keyframes bottom-to-top {
+  from {
+    transform: translateY(30rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0rem);
+    opacity: 1;
   }
 }
